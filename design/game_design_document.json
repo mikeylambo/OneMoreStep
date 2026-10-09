@@ -1,0 +1,98 @@
+{
+  "title": "One More Step",
+  "hook": "Plan every single step carefully",
+  "game_overview": "A minimalist 3D puzzle game where every tile you leave deactivates. Plan your path carefully to reach the exit within the target moves.",
+  "artstyle": "glassmorphism",
+  "genre": "puzzle",
+  "winning_condition": "Navigate to the exit tile on each level without trapping yourself or running out of valid moves.",
+  "losing_condition": "The player becomes trapped with no valid adjacent active tiles remaining before reaching the exit.",
+  "player_mode": "single_player",
+  "supported_orientations": [
+    "landscape",
+    "portrait",
+    "square",
+    "wide",
+    "tall",
+    "any"
+  ],
+  "input_methods": [
+    "keyboard",
+    "touch",
+    "mouse",
+    "dpad"
+  ],
+  "score_options": {
+    "score_type": "points",
+    "score_order": "higher_is_better"
+  },
+  "low_end_device_support": false,
+  "mobile_playable": true,
+  "language": [
+    "en"
+  ],
+  "content_descriptors": [],
+  "controls": [
+    {
+      "input": "W / Up Arrow / Swipe Up / Touch D-Pad Up",
+      "action": "Step one tile North (-Z direction)."
+    },
+    {
+      "input": "S / Down Arrow / Swipe Down / Touch D-Pad Down",
+      "action": "Step one tile South (+Z direction)."
+    },
+    {
+      "input": "A / Left Arrow / Swipe Left / Touch D-Pad Left",
+      "action": "Step one tile West (-X direction)."
+    },
+    {
+      "input": "D / Right Arrow / Swipe Right / Touch D-Pad Right",
+      "action": "Step one tile East (+X direction)."
+    },
+    {
+      "input": "R Key / Restart Button",
+      "action": "Instantly reset the current puzzle level to its starting state."
+    }
+  ],
+  "sections": [
+    {
+      "title": "Design Pillars",
+      "content": "1. Spatial Precision: Every step permanently changes the level topology, requiring deliberate forethought. 2. Minimalist Elegance: Midnight background with glowing cyan/amber glass tiles and crisp tactile feedback. 3. Zero Friction: Instant one-click or single-key restarts and fluid step animations.",
+      "summary": "Pillars prioritizing spatial strategy, clean minimalism, and instant feedback."
+    },
+    {
+      "title": "Core Loop",
+      "content": "The player spawns on a starting tile of a compact 3D grid. With every move in the 4 cardinal directions, the player glides to an adjacent active tile, and the vacated tile sinks and deactivates with a luminous fade. Reaching the glowing exit tile finishes the level, evaluating move efficiency against the Gold Target. Players can instantly retry or proceed to the next handcrafted puzzle.",
+      "summary": "Inspect the grid, plan a route, step through tiles, and reach the exit."
+    },
+    {
+      "title": "Core Mechanics",
+      "content": "1. Dynamic Tile Deactivation: Stepping off an active tile transforms it into a sunken inactive void that cannot be revisited. 2. Solid Obstacles: Elevated monolith walls block movement and route planning. 3. Target Move Rating: Gold rating awarded for finishing at or under target moves, and silver for standard completion. 4. Instant Reset & Clean Controls: Microsecond resets allow players to iterate freely without animation delays.",
+      "summary": "Tile deactivation, impassable walls, target move ratings, and undo/restart."
+    },
+    {
+      "title": "3D Camera & Movement Alignment",
+      "content": "3D Coordinate System: Three.js standard coordinates (+Y is Up, +X is Right/East, -Z is North, +Z is South). Camera Perspective: Elevated angled isometric view (FOV 45, tilted ~55 degrees downward) centered dynamically on the current level grid dimensions. Movement Dynamics: Smooth cubic bezier lerp translation between grid nodes with micro squash-and-stretch and downward ripple on the departing tile.",
+      "summary": "Isometric tilted top-down camera with crisp grid-snapping step animations."
+    },
+    {
+      "title": "3D Scene Hierarchy & Lighting",
+      "content": "3D Scene Separation: Deep midnight backdrop (#0a0d14) with subtle floating ambient dust embers. Interactive gameplay grid features frosted glass tiles, glowing cyan player prism, emerald exit beacon, and obsidian monolith walls. High-intensity 3-point lighting setup with soft ambient and directed key lights for crisp chamfer highlights.",
+      "summary": "Deep midnight atmospheric space with luminous neon accent glow and glass shaders."
+    },
+    {
+      "title": "Level Progression",
+      "content": "Level 1 (The First Step): Introduces stepping and tile deactivation in a simple straight/corner path. Level 2 (The Fork): Introduces a single detour where a wrong turn isolates the exit. Level 3 (The Island Bridge): Introduces choke points and wall-bounded corridors. Level 4 (The Spiral Maze): Requires weaving through interlocking loops where visiting in wrong order cuts off passage. Level 5 (The Grand Labyrinth): A master test of spatial planning with dual pathways and tight gold target move count.",
+      "summary": "Five handcrafted, progressively challenging spatial puzzles."
+    },
+    {
+      "title": "Juice & Game Feel",
+      "content": "Anticipation Juice: Subtle hover/direction indicator pulses in the intended direction. State Change Juice: As the player departs, the tile drops slightly along Y with an emissive dissipation ripple and soft mechanical click. Impact Juice: Reaching the exit triggers an expanding light pillar, harmonic chime, and gold star burst.",
+      "summary": "Crisp multi-sensory feedback for steps, tile sinking, and victory."
+    },
+    {
+      "title": "Virtual Touch Controls Implementation",
+      "content": "Render on-screen virtual directional buttons conditionally when mobile is detected via useIsMobile(). Buttons feature touch-none, pointer-events-auto, and handle onPointerDown, onPointerUp, onPointerLeave, and onPointerCancel to prevent sticky movement. Swipe gestures on the 3D canvas also trigger instant steps.",
+      "summary": "Responsive on-screen D-Pad and swipe gestures for mobile gameplay."
+    }
+  ]
+}

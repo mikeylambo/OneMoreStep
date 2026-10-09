@@ -1,0 +1,83 @@
+{
+  "schema": [
+    {
+      "name": "playerMoveSpeed",
+      "type": "number",
+      "label": "Player Glide Speed",
+      "default": 10,
+      "min": 4,
+      "max": 18,
+      "step": 1
+    },
+    {
+      "name": "cameraDistance",
+      "type": "number",
+      "label": "Camera Distance",
+      "default": 14,
+      "min": 8,
+      "max": 24,
+      "step": 1
+    },
+    {
+      "name": "cameraAngle",
+      "type": "number",
+      "label": "Camera Tilt Angle",
+      "default": 56,
+      "min": 30,
+      "max": 80,
+      "step": 2
+    },
+    {
+      "name": "tileDropSpeed",
+      "type": "number",
+      "label": "Tile Dissolve Speed",
+      "default": 4.0,
+      "min": 1.0,
+      "max": 8.0,
+      "step": 0.5
+    },
+    {
+      "name": "sunIntensity",
+      "type": "number",
+      "label": "Sun Intensity",
+      "default": 4.0,
+      "min": 1.0,
+      "max": 8.0,
+      "step": 0.5
+    },
+    {
+      "name": "ambientIntensity",
+      "type": "number",
+      "label": "Ambient Intensity",
+      "default": 1.8,
+      "min": 0.5,
+      "max": 4.0,
+      "step": 0.1
+    },
+    {
+      "name": "enableSwipeControls",
+      "type": "boolean",
+      "label": "Enable Mobile Swipes",
+      "default": true
+    },
+    {
+      "name": "defaultMusicVolume",
+      "type": "number",
+      "label": "Default Music Volume",
+      "default": 0.4,
+      "min": 0,
+      "max": 1,
+      "step": 0.05
+    }
+  ],
+  "values": {
+    "playerMoveSpeed": 10,
+    "cameraDistance": 14,
+    "cameraAngle": 56,
+    "tileDropSpeed": 4.0,
+    "sunIntensity": 4.0,
+    "ambientIntensity": 1.8,
+    "enableSwipeControls": true,
+    "defaultMusicVolume": 0.4
+  }
+}
